@@ -29,3 +29,15 @@ a:focus-visible,textarea:focus-visible{outline:3px solid #bd6338;outline-offset:
 @media(max-width:1050px){#results .graphs{grid-template-columns:1fr}}
 @media(max-width:700px){#results{padding:16px}.header-actions a{font-size:10px;padding:6px}.reflection-sheet{padding:16px}}
 @media print{body.printing-reflection #reflection-sheet{border:0;margin:0;padding:0}body.printing-reflection textarea{min-height:120px}}
+
+/* Scenario controls stay beside the explanation, in a compact persistent header. */
+.game{grid-template-rows:minmax(0,1fr)}
+.game>.map-scroll{grid-row:1}
+.side-rail{grid-row:1}
+.side-rail>.experiment-bar{display:grid;grid-template-columns:minmax(0,1fr) 92px;gap:12px;flex:none;margin:0;padding:12px 16px;background:#f6f1df;border-bottom:1px solid #c5cbb4}
+.side-rail>.experiment-bar label{display:block;font:600 12px system-ui;margin:0 0 5px}
+.side-rail>.experiment-bar select{height:32px;background:#fffdf1;border:1px solid #8d9f7d}
+.side-rail>.experiment-bar input{width:100%;height:26px;margin:3px 0 0}
+.side-rail>.experiment-bar .compact-summary{display:none}
+@media(max-width:700px){.game{grid-template-rows:46svh 58svh}.game>.map-scroll{grid-row:1;position:relative;top:auto}.side-rail{grid-row:2}.side-rail>.experiment-bar{padding:10px 16px;grid-template-columns:minmax(0,1fr) 100px}}
+@media print{.side-rail>.experiment-bar{display:none}}
